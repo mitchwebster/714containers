@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    loadbalancer:
+        image: basic-loadbalancer:latest
+        ports:
+            - 7070:8080
+        restart: always
+
+    webapp:
+        image: 714containers/goweb:initial
+        expose:
+            - "8080"
+        restart: always
